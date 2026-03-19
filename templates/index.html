@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Bias Study</title>
+</head>
+<body>
+
+<h1>Gender Bias in Chatbots</h1>
+
+<form action="/submit" method="POST">
+    <input type="text" name="participant_id" placeholder="Enter ID" required>
+
+    {% for item in items %}
+        <p><b>Prompt:</b> {{ item.prompt }}</p>
+        <p><b>Response:</b> {{ item.response }}</p>
+
+        <label>Biased?</label>
+        <input type="radio" name="bias_{{ loop.index0 }}" value="yes"> Yes
+        <input type="radio" name="bias_{{ loop.index0 }}" value="no"> No
+
+        <br>
+
+        <label>Fairness (1–5)</label>
+        <input type="number" name="fairness_{{ loop.index0 }}" min="1" max="5">
+
+        <br>
+
+        <label>Trust (1–5)</label>
+        <input type="number" name="trust_{{ loop.index0 }}" min="1" max="5">
+
+        <hr>
+    {% endfor %}
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
