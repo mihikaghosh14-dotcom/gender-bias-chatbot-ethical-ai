@@ -1,0 +1,4 @@
+gender,avg_sentiment_score,avg_response_length,avg_descriptive_frequency,num_responses
+male,0.022,17.7,0.4,30
+female,0.022,17.7,0.4,30
+neutral,0.022,17.7,0.4,30
